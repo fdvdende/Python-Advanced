@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather Forecast</title>
+    <style>
+        * {
+            color:#006600
+        }
+        h1 {
+            color:#880000
+        }
+        td {
+            font-size: 14pt;
+            padding: 1em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Weersvoorspelling voor {{content['city']}}.</h1>
+    <table>
+        {% for forcast in content['weather_forecast'] %}
+        <tr>
+            <td>{{forcast['dd']}}</td>
+            <td>{{forcast['temp']}} ℃</td>
+            <td>{{forcast['feels_like']}} ℃</td>
+            <td>{{forcast['description']}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

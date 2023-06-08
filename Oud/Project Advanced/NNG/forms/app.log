@@ -1,0 +1,20 @@
+2022-09-07T14:40:57.554 - root - INFO - Button clicked
+2022-09-07T14:41:03.318 - root - INFO - Button clicked
+2022-09-07T14:41:05.033 - root - INFO - Button clicked
+2022-09-07T14:43:58.799 - root - INFO - Button clicked
+2022-09-07T14:43:58.799 - root - DEBUG - aaa - b -  -  -  -  -  - [] - []
+2022-09-07T14:44:00.697 - root - INFO - Button clicked
+2022-09-07T14:44:00.697 - root - DEBUG - aaa - b -  -  -  -  -  - [] - []
+2022-09-07T14:44:04.183 - root - INFO - Button clicked
+2022-09-07T14:44:04.183 - root - DEBUG -  - b -  -  -  -  -  - [] - []
+2022-09-07T14:44:06.607 - root - INFO - Button clicked
+2022-09-07T14:44:06.607 - root - DEBUG - c - b -  -  -  -  -  - [] - []
+2022-09-07T14:45:02.490 - root - INFO - Button clicked
+2022-09-07T14:45:02.491 - root - DEBUG - a - b -  -  -  -  -  - [] - []
+2022-09-07T14:45:05.269 - root - INFO - Button clicked
+2022-09-07T14:45:05.270 - root - ERROR - Naam is leeg gelaten
+2022-09-07T14:45:05.270 - root - DEBUG -  - b -  -  -  -  -  - [] - []
+2022-09-07T14:45:07.738 - root - INFO - Button clicked
+2022-09-07T14:45:07.738 - root - ERROR - Naam is leeg gelaten
+2022-09-07T14:45:07.738 - root - DEBUG -  - b -  -  -  -  -  - [] - []
+2022-09-07T14:47:53.165 - root - ERROR - Naam is leeg gelaten

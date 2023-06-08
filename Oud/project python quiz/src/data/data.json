@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "question":"Waaraan herken je een konijn?",
+    "answer": "Een konijn is een knaagdier met een zachte pels en lange oren. Een konijn huppelt door het veld en eet wortelen.",
+    "keywords": ["knaagdier", "huppel", "lange oren", "zachte pels", "wortel"]
+  },
+  {
+    "id": 2,
+    "question": "Welke kleuren heeft de Nederlandse vlag?",
+    "answer": "Rood, wit en blauw",
+    "keywords": ["rood", "wit", "blauw", "oranje", "paars"]
+  },
+  {
+    "id": 3,
+    "question": "Wat weet je van Parijs?",
+    "answer": "Parijs is de stad van de liefde. De stad van PSG. De eifeltoren staat in Parijs en de Seine stroomt door Parijs.",
+    "keywords": ["liefde", "eifeltoren", "psg", "seine", "louvre"]
+  }
+]

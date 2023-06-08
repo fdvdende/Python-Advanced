@@ -1,0 +1,8 @@
+body {
+    background-color: purple;
+}
+label {
+    display: inline-block;
+    color: white;
+    width: 10em;
+}

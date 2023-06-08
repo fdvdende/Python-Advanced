@@ -1,0 +1,14 @@
+2023-03-09 22:46:19 DEBUG - debug message
+2023-03-09 22:46:19 INFO - info message
+2023-03-09 22:46:19 WARNING - warning message
+2023-03-09 22:46:19 ERROR - error message
+2023-03-09 22:46:19 CRITICAL - citical message
+2023-03-09 22:46:19 INFO - entering function [f] - args: (2,) - kwargs: {}
+2023-03-09 22:46:19 INFO - leaving function [f] - return value: 20
+2023-03-09 22:46:37 DEBUG - debug message
+2023-03-09 22:46:37 INFO - info message
+2023-03-09 22:46:37 WARNING - warning message
+2023-03-09 22:46:37 ERROR - error message
+2023-03-09 22:46:37 CRITICAL - citical message
+2023-03-09 22:46:37 INFO - entering function [f] - args: (2,) - kwargs: {}
+2023-03-09 22:46:37 INFO - leaving function [f] - return value: 20

@@ -1,0 +1,24 @@
+# Marked Directories prefixed with _
+_*/
+
+# Visual Studio
+*.code-workspace
+
+# PyCharm
+.idea/
+
+# Mac OS
+**/.DS_Store
+
+# jupyter notebook
+.ipynb_checkpoints
+
+# python
+__pycache__
+**/*.pyc
+
+# ini files
+**/config.ini
+
+# Virtual Environments
+.venv/

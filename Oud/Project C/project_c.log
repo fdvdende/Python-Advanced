@@ -1,0 +1,7 @@
+2023-03-07 11:58:03 INFO - User Peter logged in.
+2023-03-07 12:16:17 INFO - User Peter logged in.
+2023-03-08 12:04:22 INFO - User peter logged in.
+2023-03-08 12:05:00 INFO - User peter logged out.
+2023-03-08 12:09:30 INFO - User peter tried to log in with password aaa.
+2023-03-08 12:09:41 INFO - User peter logged in.
+2023-03-08 12:09:47 INFO - User peter logged out.

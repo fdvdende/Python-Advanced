@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block title %}Index{% endblock %}
+
+{% block head %}
+    {{ super() }}
+    <style type="text/css">
+        .important {
+            color: #336699;
+        }
+        .new {
+            margin: 2em;
+            padding: 1em;
+            border: 1px solid darkgray;
+            border-radius: 15px;
+        }
+        input[name="delete_line"] {
+            color: red;
+            margin-left: 3em;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+    <h1>Records</h1>
+    <div class="important">
+      <ul>
+      {% for line in users %}
+          <li>
+              <form method="post">{{ line }}
+                  <input type="hidden" name="line_to_delete" value="{{ line }}">
+                  <input type="submit" name="delete_line" value="🗑">
+              </form>
+          </li>
+      {% endfor %}
+      </ul>
+    </div>
+    <div class="new">
+        <form method="post">
+            <span>
+                <label>New record</label>
+                <input type="text" name="new_line">
+            </span>
+            <input type="submit" name="add_line" value="Add">
+        </form>
+    </div>
+{% endblock %}
