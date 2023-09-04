@@ -1,5 +1,6 @@
 from string import ascii_lowercase, digits, punctuation
 from time import perf_counter_ns
+from functools import lru_cache
 
 alphabet = ascii_lowercase + digits + punctuation
 
@@ -21,6 +22,8 @@ def debug(f):
     return wrapper
 
 
+
+
 @duration
 def caesar_encrypt(original, shift = 3):
     substitution = alphabet[shift:] + alphabet[:shift]
@@ -35,8 +38,9 @@ def caesar_decrypt(encrypted, shift = 3):
     original = ''.join(d.get(c, c) for c in encrypted.upper())
     return original
 
-
-@debug
+@duration
+# @debug
+@lru_cache
 def minimum_maximum(*args, **kwargs):
     lowest = args[0]
     highest = args[0]
@@ -48,10 +52,11 @@ def minimum_maximum(*args, **kwargs):
     return lowest, highest
 
 
-numbers = [34,56,67,23,56,67,45,78,90]
+numbers = [34,56,67,23,56,67,45,78,90] * 100
 
-print( minimum_maximum(*numbers, factor = 10, offset = 100) )
+print( minimum_maximum(*numbers) )
 
+print( minimum_maximum(*numbers) )
 
 
 
