@@ -1,0 +1,6 @@
+INFO 2023-09-05T14:11:33.761 - Original wat is het geheim? => Encrypted ZDW LV KHW JHKHLP\
+INFO 2023-09-05T14:11:41.568 - Original abacadabra => Encrypted DEDFDGDEUD
+INFO 2023-09-05T14:11:50.488 - Original whatever => Encrypted ZKDWHYHU
+INFO 2023-09-05T14:12:16.175 - Original dit is top => Encrypted GLW LV WRS
+INFO 2023-09-05T14:12:26.496 - Original een nog veel meer => Encrypted HHQ QRJ YHHO PHHU
+INFO 2023-09-05T14:42:19.702 - Original een stukje nederlandse tekst die ik wil encrypten => Encrypted HHQ VWXNMH QHGHUODQGVH WHNVW GLH LN ZLO HQFU1SWHQ
