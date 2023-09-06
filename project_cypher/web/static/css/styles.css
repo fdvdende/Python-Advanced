@@ -1,0 +1,9 @@
+body {
+    background-color: gold;
+}
+.original {
+    color: red;
+}
+.encrypted {
+    color: green;
+}

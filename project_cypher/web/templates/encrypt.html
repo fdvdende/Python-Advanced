@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Encrypt</title>
+    <link rel="stylesheet" href="css/styles.css"/>
+</head>
+<body>
+    <h1>Encrypt a message with Caesar encryption with shift 3</h1>
+
+    <form method="POST">
+        <label>Original message:</label>
+        <br>
+        <input type="text" name="original" class="original" value="{{ original }}">
+        <br>
+        <input type="submit" value="Encrypt">
+    </form>
+
+    <div>
+        <label>The encrypted message is:</label><br>
+        <div class="encrypted">{{ encrypted }}</div>
+    </div>
+</body>
+</html>
