@@ -8,7 +8,7 @@ class App(tk.Frame):
 
     def create_widgets(self, master):
 
-        lbl_name = tk.Label(text='Naam', justify=tk.LEFT, font=('Arial', 14))
+        lbl_name = tk.Label(text='Naam', justify=tk.LEFT)
         lbl_name.grid(row = 1, column = 1, ipadx = 16)
 
         entry_name = tk.Entry()
@@ -32,8 +32,8 @@ class App(tk.Frame):
         entry_password = tk.Entry()
         entry_password.grid(row = 4, column = 2, ipadx = 16)
 
-        lbl_name = tk.Label(text='Password generator', justify=tk.LEFT)
-        lbl_name.grid(row = 5, column = 1, ipadx = 16, pady = (16, 0))
+        lbl_name = tk.Label(text='Password generator', justify=tk.LEFT, font=("Helvetica", 24))
+        lbl_name.grid(row = 5, column = 1, columnspan = 2, ipadx = 16, pady = (32, 6))
 
         lbl_length = tk.Label(text='Number of characters')
         lbl_length.grid(row = 6, column = 1, ipadx = 16)
@@ -65,7 +65,8 @@ class App(tk.Frame):
         entry_special = tk.Entry(width = 6)
         entry_special.grid(row = 10, column = 2, ipadx = 16)
 
-
+        btn_generate = tk.Button(text='Generate')
+        btn_generate.grid(row = 11, column = 1, columnspan=2)
 
 if __name__ == '__main__':
 
