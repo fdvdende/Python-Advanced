@@ -1,4 +1,6 @@
 from password_manager.password_manager.passwords.password_generator import generate_password
+from password_manager.persistence.store_as_pickle import store
+
 
 import tkinter as tk
 
@@ -41,7 +43,10 @@ class App(tk.Frame):
         self.entry_password = tk.Entry(textvariable = self.password)
         self.entry_password.grid(row = 4, column = 2, ipadx = 16)
 
-        btn_generate = tk.Button(text='Store', font=('Helvetica', 18, 'bold'), fg='#aa0000')
+        btn_generate = tk.Button(text='Store',
+                                 font=('Helvetica', 18, 'bold'),
+                                 fg='#aa0000',
+                                 command=self.store_handler)
         btn_generate.grid(row = 5, column = 1, columnspan=2, pady = 16, ipadx = 8, ipady = 8)
 
         lbl_name = tk.Label(text='Password generator', font=('Helvetica', 24, 'bold'))
@@ -107,6 +112,14 @@ class App(tk.Frame):
         print(password)
         self.password.set(password)
 
+    def store_handler(self):
+        d = {
+            'name': self.name.get(),
+            'url': self.url.get(),
+            'username': self.username.get(),
+            'password': self.password.get()
+        }
+        store(d)
 
 
 if __name__ == '__main__':
@@ -115,6 +128,7 @@ if __name__ == '__main__':
 
     root.geometry('410x550+100+100')  # width x height + x_offset + y_offset
     root.title('Password Manager')
+    root.resizable(width = False, height = False)
 
     App(root)
 
