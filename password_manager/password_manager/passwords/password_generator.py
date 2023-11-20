@@ -5,11 +5,13 @@ class InvalidArgumentException(Exception):
     pass
 
 
-def generate_password(required_length=8,
-                      n_lowercase=1,
-                      n_uppercase=1,
-                      n_numbers=1,
-                      n_special=1):
+def generate_password(required_length: int = 8,
+                      n_lowercase: int = 1,
+                      n_uppercase: int = 1,
+                      n_numbers: int = 1,
+                      n_special: int = 1) -> str:
+
+    """A function to generate a secure password with minimal requirements"""
 
     lowercase_characters = 'abcdefghijkmnopqrstuvwxyz'  # removed l
     uppercase_characters = 'ABCDEFGHJKLMNPQRSTUVWXYZ'  # removed IO
@@ -44,4 +46,4 @@ def generate_password(required_length=8,
 
 if __name__ == '__main__':
 
-    print(generate_password(8, 4, 4, 0, 0))
+    print(generate_password(8, 4, 4, 2, 0))
