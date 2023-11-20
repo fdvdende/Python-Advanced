@@ -8,8 +8,11 @@ class App(tk.Frame):
 
     def create_widgets(self, master):
 
+        lbl_name = tk.Label(text='Password manager', font=('Helvetica', 24, 'bold'))
+        lbl_name.grid(row = 0, column = 1, columnspan = 2, ipadx = 16, pady = (12, 6))
+
         lbl_name = tk.Label(text='Naam')
-        lbl_name.grid(row = 1, column = 1, ipadx = 16, sticky='w')
+        lbl_name.grid(row = 1, column = 1, padx = 16, sticky='w')
 
         entry_name = tk.Entry()
         entry_name.grid(row = 1, column = 2, ipadx = 16)
@@ -32,7 +35,7 @@ class App(tk.Frame):
         entry_password = tk.Entry()
         entry_password.grid(row = 4, column = 2, ipadx = 16)
 
-        lbl_name = tk.Label(text='Password generator', font=("Helvetica", 24))
+        lbl_name = tk.Label(text='Password generator', font=('Helvetica', 24, 'bold'))
         lbl_name.grid(row = 5, column = 1, columnspan = 2, ipadx = 16, pady = (32, 6))
 
         lbl_length = tk.Label(text='Number of characters')
@@ -65,15 +68,15 @@ class App(tk.Frame):
         entry_special = tk.Entry(width = 6)
         entry_special.grid(row = 10, column = 2, ipadx = 16)
 
-        btn_generate = tk.Button(text='Generate')
-        btn_generate.grid(row = 11, column = 1, columnspan=2, pady = 16)
+        btn_generate = tk.Button(text='Generate', font=('Helvetica', 16, 'bold'))
+        btn_generate.grid(row = 11, column = 1, columnspan=2, pady = 16, ipadx = 8, ipady = 8)
 
 
 if __name__ == '__main__':
 
     root = tk.Tk()
 
-    root.geometry('400x400+100+100')  # width x height + x_offset + y_offset
+    root.geometry('410x480+100+100')  # width x height + x_offset + y_offset
     root.title('Password Manager')
 
     App(root)
