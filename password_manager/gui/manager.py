@@ -1,5 +1,7 @@
 from password_manager.password_manager.passwords.password_generator import generate_password
-from password_manager.persistence.store_as_pickle import store
+# from password_manager.persistence.store_as_json import store
+# from password_manager.persistence.store_as_pickle import store
+from password_manager.persistence.store_in_sqlite import store
 
 
 import tkinter as tk
