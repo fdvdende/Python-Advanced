@@ -21,9 +21,16 @@ def create_datebase():
 def store(d):
     create_datebase()
     connection = sqlite3.connect(filename)
-    sql = 'INSERT INTO passwords (name, url, username, password) VALUES (?, ?, ?, ?)'
-    connection.execute(sql, (d["name"], d["url"], d["username"], d["password"]))
-    connection.commit()
+    sql = 'SELECT name FROM passwords WHERE name=?;'
+    result = connection.execute(sql, (d["name"],))
+    if result.fetchone():
+        sql = 'UPDATE passwords SET url=?, username=?, password=? WHERE name=?;'
+        connection.execute(sql, (d["url"], d["username"], d["password"], d["name"]))
+        connection.commit()
+    else:
+        sql = 'INSERT INTO passwords (name, url, username, password) VALUES (?, ?, ?, ?);'
+        connection.execute(sql, (d["name"], d["url"], d["username"], d["password"]))
+        connection.commit()
 
 
 def retrieve_one(name):
