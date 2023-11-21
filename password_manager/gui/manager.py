@@ -2,6 +2,7 @@ from password_manager.password_manager.passwords.password_generator import gener
 # from password_manager.persistence.store_as_json import store
 # from password_manager.persistence.store_as_pickle import store
 from password_manager.persistence.store_in_sqlite import store
+from password_manager.model.password_broker import PasswordBroker
 
 
 import tkinter as tk
@@ -115,13 +116,11 @@ class App(tk.Frame):
         self.password.set(password)
 
     def store_handler(self):
-        d = {
-            'name': self.name.get(),
-            'url': self.url.get(),
-            'username': self.username.get(),
-            'password': self.password.get()
-        }
-        store(d)
+        broker = PasswordBroker(self.name.get(),
+                                self.url.get(),
+                                self.username.get(),
+                                self.password.get())
+        store(broker.to_json())
 
 
 if __name__ == '__main__':
