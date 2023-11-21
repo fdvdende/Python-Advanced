@@ -1,7 +1,14 @@
+import configparser
 
 from cryptography.fernet import Fernet
 
-key = b'O7t1sce1zWza1YY-RtJMPygbnjFgBc47g2SVtGmynzw='
+filename = 'config.ini'
+
+config = configparser.ConfigParser()
+config.read(filename)
+key = bytes(config['encryption']['key'], 'utf8')
+
+# key = b'O7t1sce1zWza1YY-RtJMPygbnjFgBc47g2SVtGmynzw='
 
 def encrypt(original):
     pass
@@ -12,9 +19,9 @@ def decrypt(encrypted):
 
 if __name__ == '__main__':
 
-    key = Fernet.generate_key()
-    print(key)
-
+    # key = Fernet.generate_key()
+    # print(key)
+    #
     f = Fernet(key)
 
     original = b"A really secret message. Not for prying eyes."
