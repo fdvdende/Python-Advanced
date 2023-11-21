@@ -13,10 +13,10 @@ class Encryptor:
         key = bytes(config['encryption']['key'], 'utf8')
         self._cypher = Fernet(key)
 
-    def encrypt(self, original):
+    def encrypt(self, original: str) -> bytes:
         return self._cypher.encrypt(bytes(original, 'utf8'))
 
-    def decrypt(self, encrypted):
+    def decrypt(self, encrypted: bytes) -> str:
         return str(self._cypher.decrypt(encrypted), 'utf8')
 
 
