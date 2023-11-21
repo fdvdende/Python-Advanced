@@ -5,7 +5,7 @@ from cryptography.fernet import Fernet
 
 class Encryptor:
 
-    config_filename = 'config.ini'
+    config_filename = '../encryption/config.ini'
 
     def __init__(self):
         config = configparser.ConfigParser()
@@ -37,6 +37,8 @@ if __name__ == '__main__':
 
     decrypted = encryptor.decrypt(encrypted)
     print(decrypted)
+
+
 
 
 
