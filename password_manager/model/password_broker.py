@@ -11,12 +11,28 @@ from password_manager.encryption.encryptor import Encryptor
 
 def timer(func):
     def wrapper(*args, **kwargs):
-        t0 = time.time_ns()
+        t0 = time.time()
         return_value = func(*args, **kwargs)
-        t1 = time.time_ns()
-        print(f'duration {t1 - t0}ns')
+        t1 = time.time()
+        print(f'Duration {t1 - t0}s')
         return return_value
     return wrapper
+
+
+last_t = time.time() - 1
+def throttle(func):
+    def wrapper(*args, **kwargs):
+        global last_t
+        t0 = time.time()
+        if (t0 - last_t) > 1:
+            return_value = func(*args, **kwargs)
+        else:
+            print('Too many attempts!!!')
+            return_value = False
+        last_t = t0
+        return return_value
+    return wrapper
+
 
 
 def logger(func):
@@ -36,6 +52,7 @@ class PasswordBroker:
         self._username = username
         encryptor = Encryptor()
         self._password = encryptor.encrypt(password)
+        self._hash = hash(password)
 
     @property
     def name(self):
@@ -53,6 +70,11 @@ class PasswordBroker:
     def password(self):
         encryptor = Encryptor()
         return encryptor.decrypt(self._password)
+
+    @throttle
+    def validate_password(self, test_password):
+        test_hash = hash(test_password)
+        return test_hash == self._hash
 
     def __str__(self):
         return f'{self._name} {self._url} {self._username}'
@@ -79,3 +101,11 @@ if __name__ == '__main__':
     print(repr(broker))
     print(broker.to_json())
     print(broker.password)
+
+    print(broker.validate_password('abcd'))
+    print(broker.validate_password('dsf'))
+    print(broker.validate_password('abcdfgdfhdd'))
+    print(broker.validate_password('jhsdfgkasjhf'))
+    time.sleep(2)
+    print(broker.validate_password('jhsdfgkasjhf'))
+
