@@ -12,16 +12,18 @@ from password_manager.encryption.encryptor import Encryptor
 def timer(func):
     def wrapper(*args, **kwargs):
         t0 = time.time_ns()
-        return func(*args, **kwargs)
+        return_value = func(*args, **kwargs)
         t1 = time.time_ns()
         print(f'duration {t1 - t0}ns')
+        return return_value
     return wrapper
 
 
 def logger(func):
     def wrapper(*args, **kwargs):
         logging.debug(f'In functie {func.__name__}.')
-        return func(*args, **kwargs)
+        return_value = func(*args, **kwargs)
+        return return_value
     return wrapper
 
 
