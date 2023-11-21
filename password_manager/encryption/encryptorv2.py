@@ -8,9 +8,9 @@ class ConfigEncryptor:
         self.key_name = key_name
         self.key = self.load_key()
 
-        if self.key is None:
-            self.key = Fernet.generate_key()
-            self.save_key()
+#        if self.key is None:
+#            self.key = Fernet.generate_key()
+#            self.save_key()
 
         self.cipher = Fernet(self.key)
 
