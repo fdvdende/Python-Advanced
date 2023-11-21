@@ -2,19 +2,22 @@ import configparser
 
 from cryptography.fernet import Fernet
 
-filename = 'config.ini'
 
-config = configparser.ConfigParser()
-config.read(filename)
-key = bytes(config['encryption']['key'], 'utf8')
+class Encryptor:
 
-# key = b'O7t1sce1zWza1YY-RtJMPygbnjFgBc47g2SVtGmynzw='
+    config_filename = 'config.ini'
 
-def encrypt(original):
-    pass
+    def __init__(self):
+        config = configparser.ConfigParser()
+        config.read(Encryptor.config_filename)
+        key = bytes(config['encryption']['key'], 'utf8')
+        self._cypher = Fernet(key)
 
-def decrypt(encrypted):
-    pass
+    def encrypt(self, original):
+        return self._cypher.encrypt(bytes(original, 'utf8'))
+
+    def decrypt(self, encrypted):
+        return str(self._cypher.decrypt(encrypted), 'utf8')
 
 
 if __name__ == '__main__':
@@ -22,15 +25,17 @@ if __name__ == '__main__':
     # key = Fernet.generate_key()
     # print(key)
     #
-    f = Fernet(key)
+    # key = b'O7t1sce1zWza1YY-RtJMPygbnjFgBc47g2SVtGmynzw='
 
-    original = b"A really secret message. Not for prying eyes."
+    encryptor = Encryptor()
+
+    original = 'A really secret message. Not for prying eyes.'
     print(original)
 
-    encrypted = f.encrypt(original)
+    encrypted = encryptor.encrypt(original)
     print(encrypted)
 
-    decrypted = f.decrypt(encrypted)
+    decrypted = encryptor.decrypt(encrypted)
     print(decrypted)
 
 
