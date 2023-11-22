@@ -40,11 +40,15 @@ def retrieve_one(name):
     return result.fetchone()
 
 
-def retrieve_many(name):
+def retrieve_many(name = None):
     connection = sqlite3.connect(filename)
-    sql = 'SELECT * FROM passwords WHERE name LIKE ?*'
-    result = connection.execute(sql, (name,))
-    return list(result.fetchmany())
+    if name:
+        sql = 'SELECT * FROM passwords WHERE name LIKE ?*'
+        result = connection.execute(sql, (name,))
+    else:
+        sql = 'SELECT * FROM passwords'
+        result = connection.execute(sql)
+    return list(result.fetchall())
 
 
 def get_names():

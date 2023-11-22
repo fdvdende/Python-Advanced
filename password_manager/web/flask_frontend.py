@@ -1,5 +1,5 @@
 from password_manager.model.password_broker import PasswordBroker
-from password_manager.persistence.store_in_sqlite import retrieve_one
+from password_manager.persistence.store_in_sqlite import retrieve_one, retrieve_many
 
 import flask
 
@@ -32,7 +32,8 @@ def login():
 
 @app.route('/overview', methods=['GET', 'POST'])
 def overview():
-    return flask.render_template('overview.html')
+    data = retrieve_many()
+    return flask.render_template('overview.html', data = data)
 
 
 
