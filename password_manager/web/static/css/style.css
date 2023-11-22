@@ -5,3 +5,33 @@ body {
 h1 {
     color: #0000aa;
 }
+
+#login {
+    font-size: 150%;
+    border: 1px solid #000088;
+    border-radius: 25px;
+    width: 20em;
+    margin: 5em auto;
+    padding: 2em;
+    line-height: 1.8;
+    box-shadow: 4px 4px 6px #0000AA;
+}
+
+#login label {
+    display: inline-block;
+    width: 35%;
+}
+
+#login input[type="text"],
+#login input[type="password"] {
+    font-size: 1.2em;
+    width: 60%;
+}
+
+#login input[type="submit"] {
+    font-size: 1.2em;
+    margin: 2em 0 0 0;
+    padding: 0.3em 1.5em;
+    background-color: #00AAAA;
+    border-radius: 12px;
+}
