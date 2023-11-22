@@ -1,0 +1,57 @@
+
+[
+  {
+    "name": "nu.nl-net-binnen",
+    "url": "https://nu.nl/net-binnen",
+    "item_selector": "li.contentlist__item a",
+    "title_selector": ":data-teaser-title",
+    "link_selector": ":data-item-url",
+    "date_selector": "",
+    "keywords": ["actie AND schiphol", "demonstratie"]
+  },
+  {
+    "name": "aktieagenda",
+    "url": "https://www.aktieagenda.nl/bin/",
+    "item_selector": "div.middenblok",
+    "title_selector": "span.titel b",
+    "link_selector": "span.adres a:href",
+    "date_selector": "span.datum",
+    "keywords": []
+  },
+  {
+    "name": "farmersdefenceforce",
+    "url": "https://www.farmersdefenceforce.nl/categorie/acties/",
+    "item_selector": "article.aux-column-post-entry",
+    "title_selector": "div.entry-main header h4.entry-title a",
+    "link_selector": "div.entry-main header h4.entry-title a:href",
+    "date_selector": "div.entry-date a time",
+    "keywords": []
+  },
+  {
+    "name": "Indymedia agenda",
+    "url": "https://www.indymedia.nl/event/",
+    "item_selector": "div.event",
+    "title_selector": "div.title.summary a",
+    "link_selector": "div.title.summary a:href",
+    "date_selector": "div.start",
+    "keywords": []
+  },
+  {
+    "name": "Voorpost",
+    "url": "https://voorpost.org/agenda/",
+    "item_selector": "div.event",
+    "title_selector": "span.evcal_event_title",
+    "link_selector": "a:href",
+    "date_selector": "",
+    "keywords": []
+  },
+  {
+    "name": "samenvoornederland",
+    "url": "https://samenvoornederland.nu/agenda/",
+    "item_selector":"div.wpem-event-box-col",
+    "title_selector":"h3.wpem-heading-text",
+    "link_selector":"a:href",
+    "date_selector":"div.wpem-event-date-time span",
+    "keywords": []
+  }
+]
