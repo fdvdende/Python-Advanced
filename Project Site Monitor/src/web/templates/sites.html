@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Sites followed</h1>
+    {% if sites|length == 0 %}
+    <p style="color: darkred;">
+        No sites to display or an error occured reading and parsing the "sites_to_monitor.json" file.
+    </p>
+    {% else %}
+    <ul>
+    {% for site in sites %}
+        <li>{{ site }}</li>
+    {% endfor %}
+    </ul>
+    {% endif %}
+{% endblock %}

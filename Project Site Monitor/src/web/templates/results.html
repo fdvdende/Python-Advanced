@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+<header>
+    <h1>{{ results|length }} Results</h1>
+    <form method="get">
+        <label>Keywords</label>
+        <input type="text" name="keywords" id="keywords" value="{{ keywords }}">
+        <input type="submit" id="filter_list" value="Search">
+    </form>
+    <form method="post" action="/update_sites">
+        <input type="submit" id="update_sites" value="Update Sites">
+    </form>
+</header>
+<table>
+    {% for result in results %}
+    <tr class="{{ result['status'] }}">
+        <td>{{ result['name'] }}</td>
+        <td title="{{ result['html'] }}">
+            <ul>
+                <li>{{ result['title'] }}</li>
+                <li><a href="{{ result['link'] }}">{{ result['link'] }}</a></li>
+                <li>{{ result['date'] }}</li>
+            </ul>
+        </td>
+        <td class="nowrap">{{ result['first_seen'] }}</td>
+        <td class="nowrap">{{ result['last_seen'] }}</td>
+        <td class="nowrap">
+            <form method="post">{{ line }}
+                <input type="submit" name="watch_line" value="W">
+                <input type="submit" name="ignore_line" value="I">
+                <label>{{ result['status'] }}</label>
+                <input type="hidden" name="title" value="{{ result['title'] }}">
+            </form>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

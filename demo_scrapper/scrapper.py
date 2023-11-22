@@ -33,6 +33,8 @@ images = soup.find_all('img')
 
 for img in images:
     img_url = img.get('src')
+    if not url.endswith('/'):
+        url += '/'
     if not img_url.startswith('http'):
         img_url = url + img_url
     print(img_url)
@@ -46,6 +48,8 @@ if yesno.upper().startswith('Y'):
 
     for img in images:
         img_url = img.get('src')
+        if not url.endswith('/'):
+            url += '/'
         if not img_url.startswith('http'):
             img_url = url + img_url
 
