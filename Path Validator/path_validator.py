@@ -1,5 +1,6 @@
 import tkinter as tk
 from tkinter import filedialog
+from tkinter import messagebox
 import os
 
 
@@ -153,6 +154,7 @@ class App(tk.Frame):
         with open(file_path, 'w') as f:
             for filename in self.to_long:
                 print(filename, file=f)
+        messagebox.showinfo(title='Done', message='Done storing results')
 
     @staticmethod
     def get_recursive_list_of_files(directory, max_length = None):
