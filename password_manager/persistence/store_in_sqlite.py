@@ -36,14 +36,14 @@ def store(d):
 def retrieve_one(name):
     connection = sqlite3.connect(filename)
     sql = 'SELECT * FROM passwords WHERE name = ?'
-    result = connection.execute(sql, name)
+    result = connection.execute(sql, (name,))
     return result.fetchone()
 
 
 def retrieve_many(name):
     connection = sqlite3.connect(filename)
     sql = 'SELECT * FROM passwords WHERE name LIKE ?*'
-    result = connection.execute(sql, name)
+    result = connection.execute(sql, (name,))
     return list(result.fetchmany())
 
 
