@@ -1,5 +1,6 @@
 import tkinter as tk
 from tkinter import filedialog
+from tkinter import messagebox
 import os
 
 
@@ -132,25 +133,28 @@ class App(tk.Frame):
     def handle_source(self):
         path = filedialog.askdirectory()
         self.source.set(path)
+        destination = self.destination.get()
+        self.remaining.set(App.MAX_FILENAME_LENGTH - len(destination))
         remaining = int(self.remaining.get())
         self.to_long = []
         for absolute_path in self.get_recursive_list_of_files(path):
             if len(absolute_path) > remaining:
                 self.to_long.append(absolute_path)
         if self.to_long:
-            self.lbl_ok['text'] = 'OK - All files can be copied'
-        else:
             self.lbl_ok['text'] = f'NOT OK - {len(self.to_long)} are to long'
+        else:
+            self.lbl_ok['text'] = 'OK - All files can be copied'
 
     def handle_output(self):
         file_path = filedialog.asksaveasfilename()
-        self.source.set(file_path)
+        self.output.set(file_path)
 
     def handle_store(self):
-        file_path = self.source.get()
+        file_path = self.output.get()
         with open(file_path, 'w') as f:
             for filename in self.to_long:
                 print(filename, file=f)
+        messagebox.showinfo(title='Done', message='Done storing results')
 
     @staticmethod
     def get_recursive_list_of_files(directory, max_length = None):
