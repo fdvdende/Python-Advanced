@@ -30,10 +30,10 @@ def login():
         return flask.render_template('login.html')
 
 
-@app.route('/overview', methods=['GET', 'POST'])
+@app.route('/overview')
 def overview():
     data = retrieve_many()
-    return flask.render_template('overview.html', data = data)
+    return flask.render_template('overview.html', rows = data)
 
 
 
