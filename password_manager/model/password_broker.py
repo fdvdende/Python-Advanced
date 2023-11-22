@@ -7,6 +7,7 @@ logging.basicConfig(
 )
 
 from password_manager.encryption.encryptor import Encryptor
+from password_manager.persistence.store_in_sqlite import retrieve_one
 
 
 def timer(func):
@@ -90,6 +91,13 @@ class PasswordBroker:
             'username': self._username,
             'password': self._password
         }
+
+    @staticmethod
+    def retrieve(name):
+        id, name, url, username, password = retrieve_one(name)
+        return PasswordBroker(name, url, username, password)
+
+
 
 
 
